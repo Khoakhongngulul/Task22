@@ -29,11 +29,14 @@
 <script>
     // code của bạn tại đây
     // có 1 đoạn Json string mô tả 01 chiếc ô tô như sau
-    // {"brand":"Toyota", "type":"Vios", "year":2010, "vid":"VZ-0102"}
+    let CarJson =  `{"brand":"Toyota", "type":"Vios", "year":2010, "vid":"VZ-0102"}`
     // hãy
-    // 1. định nghĩa JSON string
+    // 1. định ng   hĩa JSON string
     // 2. chuyển thành object myCar
+    let CarObject = JSON.parse(CarJson)
     // 3. viết các thông tin Nhãn hiệu, Loại, Năm sản xuất, biển số ra web, vào demojsoncar
+        var demoJsonCarElement =document.getElementById("p-demo-json-car")
+        demoJsonCarElement.innerHTML = "Brand : "+CarObject.brand+" " + "Type : "+CarObject.type + " " +"Year : "+CarObject.year +" "+ "Cid :"+CarObject.vid
     //
 
 </script>
