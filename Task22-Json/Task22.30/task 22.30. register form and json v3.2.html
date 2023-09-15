@@ -31,7 +31,7 @@
         </div>
         <div class="form-group col-md-6">
           <label for="regioninput">Region</label>
-          <input type="text" class="form-control" name="regioninput" placeholder="Your region..">
+          <input id="input-region" type="text" class="form-control" name="regioninput" placeholder="Your region..">
         </div>
       </div>
     
@@ -56,7 +56,9 @@
     const gJSON_CAR_OPTION_DB = `[{"brandId": "10","brandName": "None"}, 
                               {"brandId": "15","brandName": "Audi"},
                               {"brandId": "20","brandName": "BMW"},
-                              {"brandId": "30","brandName": "Citroen"}]`;
+                              {"brandId": "30","brandName": "Citroen"},
+                              {"brandId": "55","brandName": "Toyota"},
+                              {"brandId": "75","brandName": "Mazda"}]`;
     var gJsonCarObject = JSON.parse(gJSON_CAR_OPTION_DB);
 
     /*** REGION 2 - Vùng gán / thực thi sự kiện cho các elements */
@@ -69,14 +71,25 @@
     }
 
     //send form data; Send button onClick
-    function onSendDataClick() {
+    function onSendDataClick() { debugger;
       // code để gửi selected car
-      console.log("selected car is: ");
+      var CarSelectedElement = document.getElementById("select-car")
+      var CarOptions = CarSelectedElement.options[CarSelectedElement.selectedIndex].text
+      console.log("selected car is: "+CarOptions);
       var vCarSelectElement = document.getElementById("select-car");
       var vSelectedBrandId = vCarSelectElement.value;
       console.log("brandId: " + vSelectedBrandId);
       console.log("brandName :" + vCarSelectElement.options[vCarSelectElement.selectedIndex].text);
       // yêu cầu 2: bạn hãy ghi tiếp những dữ liệu khác trên form ra console.log
+      var vFirstNameValue = document.getElementById("input-firstname").value
+      console.log("First name :"+vFirstNameValue)
+      var vLastNameValue = document.getElementById("input-lastname").value
+      console.log("Your last name"+vLastNameValue)
+      var vRegionValue = document.getElementById("input-region").value
+      console.log("Your region :"+vRegionValue)
+      var vCountry = document.getElementById("select-country")
+      var vCountryOption = vCountry.options[vCountry.selectedIndex].text
+      console.log("Country :"+vCountryOption)
 
     }
 
